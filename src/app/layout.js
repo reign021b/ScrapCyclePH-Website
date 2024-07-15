@@ -1,5 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+// import Swiper bundle with all modules installed
+import Swiper from "swiper/bundle";
+
+// import styles bundle
+import "swiper/css/bundle";
+import PageContainer from "./components/page-container";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +17,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} text-slate-800 overflow-x-hidden`}>
+        <PageContainer>{children}</PageContainer>
+      </body>
     </html>
   );
 }
