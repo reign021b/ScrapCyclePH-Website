@@ -1,6 +1,10 @@
 [build]
   command = "npm run build"
+<<<<<<< HEAD
   publish = "dist"     
+=======
+  publish = "dist"
+>>>>>>> 59ddbbe6168a006280450329c499d412ff97ca81
 
 [[redirects]]
   from = "/"
