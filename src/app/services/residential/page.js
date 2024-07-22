@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function Residential() {
   return (
-    <div className="flex flex-col items-center justify-between max-w-5xl container mx-auto pt-20 pb-8">
+    <div className="px-5 flex flex-col items-center justify-between max-w-5xl container mx-auto pt-20 pb-8">
       {/* title and description */}
       <h3 className="text-lg text-slate-500">Residential</h3>
-      <h1 className="text-4xl font-semibold mt-2 w-full text-center pb-10 leading-relaxed px-12">
+      <h1 className="scale-75 md:scale-90 lg:scale-100 text-4xl font-semibold md:mt-2 w-full text-center md:pb-10 leading-relaxed md:px-12">
         Embrace Easy Recycling: Why ScrapCycle is Your Ultimate Solution
       </h1>
 
@@ -20,7 +20,7 @@ export default function Residential() {
       </div>
 
       {/* article */}
-      <div className="p-8 bg-white rounded-lg mx-36 pt-12">
+      <div className="p-8 bg-white rounded-lg md:mx-36 pt-12">
         <p className="mb-7">
           Hey there! Are you tired of the hassle of traditional recycling
           methods? I get it – sorting through bins, hauling heavy bags to
