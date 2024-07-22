@@ -60,7 +60,7 @@ const ContactUsPage = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            sendto: 'scrapcycleph@gmail.com',
+            sendto: 'scrapcycle781@gmail.com',
             name: values.name,
             replyTo: values.email,
             ishtml: 'false',
