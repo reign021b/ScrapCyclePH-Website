@@ -5,7 +5,7 @@ export default function Environment() {
     <div className="px-5 flex flex-col items-center justify-between max-w-5xl container mx-auto pt-10 lg:pt-20 pb-8">
       {/* title and description */}
       <h3 className="text-lg text-slate-500">Environment</h3>
-      <h1 className="text-4xl font-semibold mt-2 w-full text-center pb-10 leading-relaxed lg:px-12">
+      <h1 className="text-2xl md:text-4xl font-semibold mt-2 w-full text-center pb-10 leading-relaxed lg:px-12">
         ScrapCycle: Revolutionizing Waste Management for a Greener Future
       </h1>
 
