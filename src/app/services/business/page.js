@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function Business() {
   return (
-    <div className="flex flex-col items-center justify-between max-w-5xl container mx-auto pt-20 pb-8">
+    <div className="px-5 flex flex-col items-center justify-between max-w-5xl container mx-auto pt-10 lg:pt-20 pb-8">
       {/* title and description */}
       <h3 className="text-lg text-slate-500">Business Waste Services</h3>
-      <h1 className="text-4xl font-semibold mt-2 w-full text-center pb-10 leading-relaxed px-12">
+      <h1 className="scale-75 md:scale-90 lg:scale-100 text-4xl font-semibold md:mt-2 w-full text-center md:pb-10 leading-relaxed md:px-12">
         Maximizing Earnings and Environmental Impact with ScrapCycle Business
         Collections
       </h1>
@@ -21,7 +21,7 @@ export default function Business() {
       </div>
 
       {/* article */}
-      <div className="p-8 bg-white rounded-lg mx-36 pt-12">
+      <div className="md:p-8 bg-white rounded-lg lg:mx-36 pt-12">
         <p className="mb-10">
           In the modern business world, sustainability and profitability go hand
           in hand. With ScrapCycle Business Collections, businesses can achieve
@@ -30,7 +30,7 @@ export default function Business() {
         </p>
 
         <h2 className="text-2xl font-semibold mb-7">Why Choose ScrapCycle?</h2>
-        <ol class="list-decimal ml-10">
+        <ol className="list-decimal ml-10">
           <li className="mb-4">
             <span className="font-bold">Convenience:</span> ScrapCycle offers
             businesses a convenient and hassle-free solution for recycling their
@@ -66,7 +66,7 @@ export default function Business() {
         <h2 className="text-2xl font-semibold mb-7 mt-10">
           Benefits of ScrapCycle Business Collections:
         </h2>
-        <ol class="list-decimal ml-10">
+        <ol className="list-decimal ml-10">
           <li className="mb-4">
             <span className="font-bold">Increased Revenue:</span> With
             ScrapCycle, businesses can turn their waste materials into a new

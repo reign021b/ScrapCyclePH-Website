@@ -53,48 +53,48 @@ export default function WhatWeBuy() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-between max-w-5xl container mx-auto pt-20 pb-28">
+    <div className="flex flex-col items-center justify-between max-w-5xl container mx-auto pt-10 lg:pt-20 pb-28">
       {/* title and description */}
       <h3 className="text-lg text-green-600">What we buy</h3>
-      <h1 className="text-4xl font-semibold mt-2 w-full text-center pb-12 border-b border-slate-200">
+      <h1 className="scale-75 md:scale-90 lg:scale-100 px-5 text-4xl font-semibold mt-2 w-full text-center pb-12 border-b border-slate-200">
         We accept a wide catalog of materials and items
       </h1>
 
       {/* menu */}
-      <div className="w-full grid grid-cols-6 gap-8 mt-8">
+      <div className="scale-75 md:scale-90 lg:scale-100 md:px-5 w-full grid grid-cols-6 gap-8 md:mt-8">
         <button
           onClick={() => scrollToRef(1)}
-          className="w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
+          className="col-span-3 md:col-span-2 lg:col-span-1 w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
         >
           Plastic
         </button>
         <button
           onClick={() => scrollToRef(2)}
-          className="w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
+          className="col-span-3 md:col-span-2 lg:col-span-1 w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
         >
           Metal
         </button>
         <button
           onClick={() => scrollToRef(3)}
-          className="w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
+          className="col-span-3 md:col-span-2 lg:col-span-1 w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
         >
           Paper
         </button>
         <button
           onClick={() => scrollToRef(4)}
-          className="w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
+          className="col-span-3 md:col-span-2 lg:col-span-1 w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
         >
           E-Waste
         </button>
         <button
           onClick={() => scrollToRef(5)}
-          className="w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
+          className="col-span-3 md:col-span-2 lg:col-span-1 w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
         >
           Battery
         </button>
         <button
           onClick={() => scrollToRef(6)}
-          className="w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
+          className="col-span-3 md:col-span-2 lg:col-span-1 w-full rounded-2xl border border-slate-400 text-center text-lg py-2 hover:bg-green-50 hover:border-green-500 hover:text-green-700"
         >
           Glass
         </button>
@@ -102,9 +102,9 @@ export default function WhatWeBuy() {
 
       {/* items */}
       {/* plastics */}
-      <div ref={plasticRef} className="pt-24">
+      <div ref={plasticRef} className="scale-90 md:scale-100 px-5 md:pt-24">
         <div className="flex">
-          <h2 className="text-4xl font-medium mr-10 w-52">Plastics</h2>
+          <h2 className="scale-90 md:scale-100 text-4xl font-medium mr-10 w-52">Plastics</h2>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -122,16 +122,16 @@ export default function WhatWeBuy() {
               <PriceItem
                 imgUrl={item.image}
                 name={item.itemName}
-                price={item.price}
+                price={item.priceRange}
               />
             ))}
         </div>
       </div>
 
       {/* metal */}
-      <div ref={metalRef} className="pt-28">
+      <div ref={metalRef} className="scale-90 md:scale-100 px-5 md:pt-28">
         <div className="flex">
-          <h2 className="text-4xl font-medium mr-10 w-52">Metals</h2>
+          <h2 className="scale-90 md:scale-100 text-4xl font-medium mr-10 w-52">Metals</h2>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -149,16 +149,16 @@ export default function WhatWeBuy() {
               <PriceItem
                 imgUrl={item.image}
                 name={item.itemName}
-                price={item.price}
+                price={item.priceRange}
               />
             ))}
         </div>
       </div>
 
       {/* paper */}
-      <div ref={paperRef} className="pt-28">
+      <div ref={paperRef} className="scale-90 md:scale-100 px-5 md:pt-28">
         <div className="flex">
-          <h2 className="text-4xl font-medium mr-10 w-52">Paper</h2>
+          <h2 className="scale-90 md:scale-100 text-4xl font-medium mr-10 w-52">Paper</h2>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -176,16 +176,16 @@ export default function WhatWeBuy() {
               <PriceItem
                 imgUrl={item.image}
                 name={item.itemName}
-                price={item.price}
+                price={item.priceRange}
               />
             ))}
         </div>
       </div>
 
       {/* e-waste */}
-      <div ref={ewasteRef} className="pt-28">
+      <div ref={ewasteRef} className="scale-90 md:scale-100 px-5 md:pt-28">
         <div className="flex">
-          <h2 className="text-4xl font-medium mr-10 w-52">E-Waste</h2>
+          <h2 className="scale-90 md:scale-100 text-4xl font-medium mr-10 w-52">E-Waste</h2>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -203,16 +203,16 @@ export default function WhatWeBuy() {
               <PriceItem
                 imgUrl={item.image}
                 name={item.itemName}
-                price={item.price}
+                price={item.priceRange}
               />
             ))}
         </div>
       </div>
 
       {/* battery */}
-      <div ref={batteryRef} className="pt-28">
+      <div ref={batteryRef} className="scale-90 md:scale-100 px-5 md:pt-28">
         <div className="flex">
-          <h2 className="text-4xl font-medium mr-10 w-52">Batteries</h2>
+          <h2 className="scale-90 md:scale-100 text-4xl font-medium mr-10 w-52">Batteries</h2>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -230,16 +230,16 @@ export default function WhatWeBuy() {
               <PriceItem
                 imgUrl={item.image}
                 name={item.itemName}
-                price={item.price}
+                price={item.priceRange}
               />
             ))}
         </div>
       </div>
 
       {/* glass */}
-      <div ref={glassRef} className="pt-28 mb-20">
+      <div ref={glassRef} className="scale-90 md:scale-100 px-5 md:pt-28 mb-20">
         <div className="flex">
-          <h2 className="text-4xl font-medium mr-10 w-52">Glass</h2>
+          <h2 className="scale-90 md:scale-100 text-4xl font-medium mr-10 w-52">Glass</h2>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -257,7 +257,7 @@ export default function WhatWeBuy() {
               <PriceItem
                 imgUrl={item.image}
                 name={item.itemName}
-                price={item.price}
+                price={item.priceRange}
               />
             ))}
         </div>

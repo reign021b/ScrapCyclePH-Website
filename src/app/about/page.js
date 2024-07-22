@@ -12,9 +12,9 @@ import ReactPlayer from "react-player";
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center justify-between max-w-5xl container mx-auto pt-20">
+    <div className="px-5 md:px=0 flex flex-col items-center justify-between w-full container mx-auto pt-5 md:pt-20">
       <h3 className="text-lg text-slate-500">About Us</h3>
-      <h1 className="text-3xl font-semibold mt-2 w-full text-center leading-relaxed">
+      <h1 className="text-xl md:text-3xl font-semibold mt-2 w-full text-center leading-relaxed">
         At ScrapCycle, we're on a mission to revolutionize waste management and
         recycling in the Philippines. Our aim is to make recycling{" "}
         <span className="text-green-600">accessible</span>
@@ -26,7 +26,7 @@ export default function About() {
 
       {/* gallery */}
       <div className="flex justify-around w-full items-center pt-16 pb-24">
-        <div className="w-56 h-72">
+        <div className="hidden lg:block w-56 h-72">
           <div className="relative w-full h-full rounded-3xl overflow-clip flex items-center justify-center">
             <Image
               src="/about-left.png"
@@ -49,7 +49,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="w-56 h-72">
+        <div className="hidden lg:block w-56 h-72">
           <div className="relative w-full h-full rounded-3xl overflow-clip flex items-center justify-center">
             <Image
               src="/about-right.png"
@@ -62,8 +62,8 @@ export default function About() {
       </div>
 
       {/* statements */}
-      <div className="grid grid-cols-2 gap-20">
-        <div className="col-span-1">
+      <div className="grid grid-cols-2 gap-10 md:gap-20">
+        <div className="col-span-2 md:col-span-1">
           <h2 className="text-2xl font-semibold">Problems we aim to solve</h2>
           <p className="text-slate-500 mt-3">
             At ScrapCycle, we address the challenge of improper waste management
@@ -73,7 +73,7 @@ export default function About() {
             future for communities.
           </p>
         </div>
-        <div className="col-span-1">
+        <div className="col-span-2 md:col-span-1">
           <h2 className="text-2xl font-semibold">Our Solutions</h2>
           <p className="text-slate-500 mt-3">
             Through our innovative platform, ScrapCycle provides a convenient
@@ -93,9 +93,9 @@ export default function About() {
         and a tangible positive impact on the environment.
       </p>
       {/* grid */}
-      <div className="my-8 grid grid-cols-2 gap-x-12 gap-y-20">
-        <div className="relative bg-neutral-100 px-6 pt-14 pb-8 rounded-2xl col-span-1">
-          <div className="absolute bottom-3/4 mb-3 bg-white rounded-full w-20 h-20 border border-green-600 text-green-600 flex items-center justify-center text-4xl">
+      <div className="my-8 grid grid-cols-2 gap-x-12 gap-y-10 md:gap-y-20">
+        <div className="relative bg-neutral-100 px-6 pt-14 pb-8 rounded-2xl col-span-2 md:col-span-1">
+          <div className="absolute bottom-3/4 mb-3 bg-white rounded-full w-14 md:w-20 h-14 md:h-20 border border-green-600 text-green-600 flex items-center justify-center text-4xl">
             <MdOutlineTimer />
           </div>
           <h3 className="text-2xl font-semibold mb-3 px-2">Convenience</h3>
@@ -105,8 +105,8 @@ export default function About() {
             the rest.
           </p>
         </div>
-        <div className="relative bg-neutral-100 px-6 pt-14 pb-8 rounded-2xl col-span-1">
-          <div className="absolute bottom-3/4 mb-3 bg-white rounded-full w-20 h-20 border border-green-600 text-green-600 flex items-center justify-center text-3xl">
+        <div className="relative bg-neutral-100 px-6 pt-14 pb-8 rounded-2xl col-span-2 md:col-span-1">
+          <div className="absolute bottom-3/4 mb-3 bg-white rounded-full w-14 md:w-20 h-14 md:h-20 border border-green-600 text-green-600 flex items-center justify-center text-3xl">
             <FaMoneyBillTrendUp />
           </div>
           <h3 className="text-2xl font-semibold mb-3 px-2">
@@ -118,8 +118,8 @@ export default function About() {
             sustainability.
           </p>
         </div>
-        <div className="relative bg-neutral-100 px-6 pt-14 pb-8 rounded-2xl col-span-1">
-          <div className="absolute bottom-3/4 mb-3 bg-white rounded-full w-20 h-20 border border-green-600 text-green-600 flex items-center justify-center text-4xl">
+        <div className="relative bg-neutral-100 px-6 pt-14 pb-8 rounded-2xl col-span-2 md:col-span-1">
+          <div className="absolute bottom-3/4 mb-3 bg-white rounded-full w-14 md:w-20 h-14 md:h-20 border border-green-600 text-green-600 flex items-center justify-center text-4xl">
             <IoEarth />
           </div>
           <h3 className="text-2xl font-semibold mb-3 px-2">
@@ -131,8 +131,8 @@ export default function About() {
             difference!
           </p>
         </div>
-        <div className="relative bg-neutral-100 px-6 pt-14 pb-8 rounded-2xl col-span-1">
-          <div className="absolute bottom-3/4 mb-3 bg-white rounded-full w-20 h-20 border border-green-600 text-green-600 flex items-center justify-center text-4xl">
+        <div className="relative bg-neutral-100 px-6 pt-14 pb-8 rounded-2xl col-span-2 md:col-span-1">
+          <div className="absolute bottom-3/4 mb-3 bg-white rounded-full w-14 md:w-20 h-14 md:h-20 border border-green-600 text-green-600 flex items-center justify-center text-4xl">
             <RiCustomerService2Fill />
           </div>
           <h3 className="text-2xl font-semibold mb-3 px-2">
@@ -147,7 +147,7 @@ export default function About() {
       </div>
 
       {/* last part */}
-      <div className="relative w-24 h-24 mt-36 rounded-3xl overflow-clip flex items-center justify-center">
+      <div className="relative w-16 md:w-24 h-16 md:h-24 mt-20 md:mt-36 rounded-3xl overflow-clip flex items-center justify-center">
         <Image
           src="/logo.png"
           fill

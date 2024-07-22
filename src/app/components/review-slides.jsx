@@ -16,8 +16,7 @@ import { LiaFacebookF } from "react-icons/lia";
 const ReviewSlides = () => {
   return (
     <Swiper
-      slidesPerView={4}
-      spaceBetween={35}
+      spaceBetween={15}
       pagination={{
         clickable: true,
       }}
@@ -25,6 +24,30 @@ const ReviewSlides = () => {
       autoplay={{
         delay: 1800,
         disableOnInteraction: false,
+      }}
+      centeredSlides={true}
+      breakpoints={{
+        640: {
+          scale: 0.8,
+          slidesPerView: 1,
+          spaceBetween: 20,
+          centeredSlides: true,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+          centeredSlides: true,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+          centeredSlides: true,
+        },
+        1440: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+          centeredSlides: true,
+        },
       }}
       modules={[Autoplay]}
       className="mySwiper"

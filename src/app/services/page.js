@@ -3,13 +3,13 @@ import ServiceItem from "./components/service-item";
 
 export default function Services() {
   return (
-    <div className="flex flex-col items-center justify-between max-w-5xl container mx-auto pt-20 pb-28">
+    <div className="flex flex-col items-center justify-between max-w-5xl container mx-auto pt-10 lg:pt-20 pb-28">
       {/* title and description */}
       <h3 className="text-lg text-green-600">What we do</h3>
-      <h1 className="text-4xl font-semibold mt-2 mb-12">
+      <h1 className="scale-75 md:scale-90 lg:scale-100 text-center px-5 text-4xl font-semibold mt-2 mb-12">
         We buy your scraps and recycle them
       </h1>
-      <p className="pt-10 border-t border-slate-200 leading-relaxed">
+      <p className="px-5 pt-10 border-t border-slate-200 leading-relaxed">
         Welcome to ScrapCycle – your trusted partner in revolutionizing waste
         management and promoting environmental sustainability across the
         Philippines. At ScrapCycle, we're on a mission to simplify recycling,
@@ -19,7 +19,7 @@ export default function Services() {
       </p>
 
       {/* grid */}
-      <div className="grid grid-cols-3 my-14 gap-x-7 gap-y-16 w-full">
+      <div className="px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-14 gap-x-7 gap-y-16 w-full">
         <ServiceItem
           title="Residential"
           description="Clear clutter, earn cash, and go green with ScrapCycle's hassle-free residential recycling services."

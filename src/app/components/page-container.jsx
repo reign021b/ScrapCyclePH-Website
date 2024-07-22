@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DownloadDialog from "./download-dialog";
 import { useState } from "react";
+import { CgClose } from "react-icons/cg";
 
 // icons
 import { FaChevronDown } from "react-icons/fa6";
@@ -13,6 +14,8 @@ import NavigationModal from "./navigation-modal";
 const PageContainer = ({ children }) => {
   const [openDownloadDialog, setOpenDownloadDialog] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   // open modal
   function modalSwitchOn() {
@@ -32,11 +35,11 @@ const PageContainer = ({ children }) => {
       )}
 
       {/* navigation bar */}
-      <nav className="sticky top-0 backdrop-blur-2xl bg-white/70 z-20 w-full">
-        <div className="container mx-auto px-4 py-2.5 flex items-center justify-between">
+      <nav className="sticky top-0 md:px-4 backdrop-blur-2xl bg-white/70 z-20 w-full">
+        <div className="w-full mx-auto md:px-4 pr-4 md:pr-0 py-2.5 flex items-center justify-between">
           {/* title logo */}
-          <Link href="/" className="flex items-center">
-            <div className="mt-[3px] mr-4">
+          <Link href="/" className="scale-75 md:scale-100 flex items-center">
+            <div className="mt-[3px] mr-2 md:mr-4">
               <Image
                 src="/logo.png"
                 width={50.21}
@@ -44,7 +47,7 @@ const PageContainer = ({ children }) => {
                 alt="ScrapCycle Logo"
               />
             </div>
-            <div>
+            <div className="mr-6">
               <Image
                 src="/title-logo.png"
                 width={197}
@@ -55,7 +58,7 @@ const PageContainer = ({ children }) => {
           </Link>
 
           {/* middle options */}
-          <ul className="flex items-center">
+          <ul className="hidden lg:flex items-center">
             <li className="hover:text-slate-400 hover:cursor-pointer transition duration-300">
               <Link href="/services">What we do</Link>
             </li>
@@ -78,19 +81,82 @@ const PageContainer = ({ children }) => {
           </ul>
 
           {/* call to action buttons */}
-          <div className="flex items-center">
+          <div className="pl-3 md:flex items-center">
             <button
               onClick={() => setOpenDownloadDialog(true)}
-              className="w-32 py-2.5 mr-3 rounded-2xl font-medium bg-green-600 text-white hover:bg-green-800 transition duration-300"
+              className="hidden md:block w-32 py-2.5 mr-3 rounded-2xl font-medium bg-green-600 text-white hover:bg-green-800 transition duration-300"
             >
               Sell Scrap
             </button>
             <Link
               href="/contact-us"
-              className="w-32 py-2.5 rounded-2xl text-center font-medium border-green-500 text-green-600 border-solid border hover:bg-green-200/50 transition duration-300"
+              className="hidden md:block w-32 py-2.5 rounded-2xl text-center font-medium border-green-500 text-green-600 border-solid border hover:bg-green-200/50 transition duration-300"
             >
               Contact Us
             </Link>
+
+            {/* mobile menu */}
+            <div className="ml-3 lg:hidden">
+              <button className="rounded-2xl shadow-inherit navbar-burger flex items-center text-green-600 p-3" onClick={toggleMobileMenu}>
+                <svg className="block h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <title>Mobile menu</title>
+                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                </svg>
+              </button>
+            </div>
+            <div className={`absolute top-0 left-0 w-full h-auto opacity-100 bg-white transform ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-300 lg:hidden`}>
+              
+              {isMobileMenuOpen && (
+                <div className="mobile-menu mt-5">
+                  <button onClick={toggleMobileMenu} className="flex w-full items-right pr-5">
+                    <div className="text-2xl flex ml-auto">
+                      <CgClose />
+                    </div>
+                  </button>
+                </div>
+              )}
+              <Link href="/" className="scale-75 md:scale-100 flex justify-center items-center mx-auto">
+                <div className="mr-2 md:mr-4">
+                  <Image
+                    src="/logo.png"
+                    width={50.21}
+                    height={48}
+                    alt="ScrapCycle Logo"
+                  />
+                </div>
+                <div className="mr-6">
+                  <Image
+                    src="/title-logo.png"
+                    width={197}
+                    height={30.61}
+                    alt="ScrapCycle Title Logo"
+                  />
+                </div>
+              </Link>
+
+              <ul className="p-5 mb-5 md:mb-2">
+                {/* Middle options */}
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-t border-b"><Link href="/services">What we do</Link></li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/what-we-buy">What we buy</Link></li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/about">About ScrapCycle PH</Link></li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/faqs" className="hover:text-black">FAQ</Link></li>
+              </ul>
+              {/* Call to action buttons */}
+              <div className="flex items-center justify-center pb-10 md:pb-0">
+                <button
+                  onClick={() => setOpenDownloadDialog(true)}
+                  className=" md:hidden w-32 py-2.5 mr-3 rounded-2xl font-medium bg-green-600 text-white hover:bg-green-800 transition duration-300"
+                >
+                  Sell Scrap
+                </button>
+                <Link
+                  href="/contact-us"
+                  className=" md:hidden w-32 py-2.5 rounded-2xl text-center font-medium border-green-500 text-green-600 border-solid border hover:bg-green-200/50 transition duration-300"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -112,7 +178,7 @@ const PageContainer = ({ children }) => {
       </section>
 
       {/* footer */}
-      <footer className="px-20 container mx-auto">
+      <footer className="px-3 md:px-10 lg:px-20 container lg:mx-auto sm:mx-auto">
         {/* container */}
         <div className="border-t border-b border-t-slate-200 border-b-slate-200 w-full pt-10 pb-20 px-6">
           {/* title logo */}
@@ -138,7 +204,7 @@ const PageContainer = ({ children }) => {
           {/* bottom */}
           <div className="mt-9 flex justify-between">
             {/* contact */}
-            <div className="max-w-sm">
+            <div className="w-full">
               <h2 className="text-2xl font-semibold leading-normal">
                 We would love to hear from you.
               </h2>
@@ -146,16 +212,18 @@ const PageContainer = ({ children }) => {
                 Feel free to reach out if you want to collaborate with us or
                 simply have a chat.
               </p>
-              <Link
-                href="/contact-us"
-                className="text-center px-10 py-3 mr-3 rounded-2xl font-medium bg-green-600 text-white hover:bg-green-800 transition duration-300"
-              >
-                Contact Us
-              </Link>
+              <div className="flex justify-center md:justify-start items-center">
+                <Link
+                  href="/contact-us"
+                  className="text-center px-2 md:px-3 py-3 rounded-2xl text-xs sm:text-sm md:text-md lg:text-lg font-medium bg-green-600 text-white hover:bg-green-800 transition duration-300"
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
 
             {/* Contact us details */}
-            <ul className="text-sm ml-8 max-w-64 text-slate-500">
+            <ul className="text-sm px-3 w-full text-slate-500">
               <li className="font-semibold text-slate-800">Contact us</li>
               <li className="mt-4">
                 <p>Our Email</p>
@@ -166,13 +234,13 @@ const PageContainer = ({ children }) => {
                 <p>(+63)966 902 8659</p>
               </li>
               <li className="mt-4">
-                Hiraiya Bldg. Caraga State University, Brgy. Ampayon, Butuan
+                Hiraya Bldg. Caraga State University, Brgy. Ampayon, Butuan
                 City
               </li>
             </ul>
 
             {/* Contact us details */}
-            <ul className="text-sm text-slate-500 ">
+            <ul className="hidden md:block text-sm ml-8 mr-8 w-full text-slate-500 ">
               <li className="font-semibold text-slate-800">Services</li>
               <li className="mt-4">
                 <Link href={"/faqs"} className="hover:text-black">
@@ -200,7 +268,7 @@ const PageContainer = ({ children }) => {
             </ul>
 
             {/* Contact us details */}
-            <ul className="text-sm text-slate-500 ">
+            <ul className="hidden md:block text-sm w-full text-slate-500 ">
               <li className="font-semibold text-slate-800">Company</li>
               <li className="mt-4">
                 <Link href={"/about"} className="hover:text-black">
