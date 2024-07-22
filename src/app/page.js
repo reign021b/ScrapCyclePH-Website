@@ -203,7 +203,7 @@ export default function Home() {
 
           {/* content */}
           <div className="absolute z-10 p-14 bg-green-800/75 h-full w-full text-white text-left flex items-end">
-            <div className="w-11/12 md:w-8/12">
+            <div className="w-11/12 md:w-8/12 md:h-full lg:h-auto md:mb-6 lg:mb-0">
               <h3 className="text-xl md:text-3xl font-medium ">
                 We help businesses become more sustainable
               </h3>
@@ -237,7 +237,7 @@ export default function Home() {
 
           {/* content */}
           <div className="absolute z-10 p-14 bg-gradient-to-tr from-slate-50 to-transparent h-full w-full text-left flex items-end">
-            <div className="w-11/12 md:w-8/12">
+            <div className="w-11/12 md:w-8/12 md:h-full lg:h-auto md:mb-6 lg:mb-0">
               <h3 className="text-xl md:text-3xl font-semibold text-green-800">
                 Our Environmental Advocacy
               </h3>

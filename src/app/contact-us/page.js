@@ -1,109 +1,188 @@
-import { SMTPClient } from "emailjs";
-import * as Yup from "yup";
+'use client';
 
-const client = new SMTPClient({
-  user: "user",
-  password: "password",
-  host: "smtp.your-email.com",
-  ssl: true,
-});
+import React, { useState } from 'react';
 
-export default function ContactUs() {
-  const emailSchema = Yup.object({
-    topic: Yup.string(),
-    email: Yup.string().email(),
-    name: Yup.string().required(),
-    postalCode: Yup.string().required(),
-    phone: Yup.number().required().positive().integer(),
+const ContactUsPage = () => {
+  const [values, setValues] = useState({
+    topic: '',
+    email: '',
+    name: '',
+    postalCode: '',
+    phone: '',
+    message: '',
   });
 
-  const initialValues = {
-    topic: "",
-    email: "",
-    name: "",
-    postalCode: "",
-    phone: "",
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
   };
 
-  const onSubmit = (values) => {
-    alert(JSON.stringify(values, null, 2));
-  };
-
-  async function sendEmail(params) {
-    try {
-      const message = await client.sendAsync({
-        text: "i hope this works",
-        from: "you <username@your-email.com>",
-        to: "someone <someone@your-email.com>, another <another@your-email.com>",
-        cc: "else <else@your-email.com>",
-        subject: "testing emailjs",
-      });
-      console.log(message);
-    } catch (err) {
-      console.error(err);
+  const validate = () => {
+    let tempErrors = {};
+    if (!values.topic) tempErrors.topic = "Topic is required.";
+    if (!values.email) {
+      tempErrors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      tempErrors.email = "Email is not valid.";
     }
-  }
+    if (!values.name) tempErrors.name = "Full Name is required.";
+    if (!values.postalCode) tempErrors.postalCode = "ZIP/Postal Code is required.";
+    if (!values.phone) tempErrors.phone = "Phone Number is required.";
+    if (!values.message) tempErrors.message = "Message is required.";
+    setErrors(tempErrors);
+    return Object.keys(tempErrors).length === 0;
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (validate()) {
+      try {
+        const mergedMessage = `
+        ${values.message}
+        
+
+        Email Address: ${values.email}
+        Full Name: ${values.name}
+        ZIP/Postal Code: ${values.postalCode}
+        Phone Number: ${values.phone}
+        `;
+  
+        const requestOptions = {
+          method: 'POST',
+          headers: {
+            'x-rapidapi-key': '2cd655e0dcmsh050a224f3d4447ep1bdedbjsn82a49cb6d4b7',
+            'x-rapidapi-host': 'mail-sender-api1.p.rapidapi.com',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            sendto: 'reign021b@gmail.com',
+            name: values.name,
+            replyTo: values.email,
+            ishtml: 'false',
+            title: `ScrapCyclePH Website - ${values.topic}`,
+            body: mergedMessage,
+          }),
+        };
+  
+        const response = await fetch('https://mail-sender-api1.p.rapidapi.com/', requestOptions);
+  
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+  
+        const result = await response.text();
+        console.log(result);
+  
+        alert('Email sent successfully!');
+      } catch (error) {
+        console.error('Error sending email:', error);
+        alert('Failed to send email');
+      }
+    } else {
+      alert('Please fill out all required fields correctly.');
+    }
+  };
+  
 
   return (
-    <div className="flex flex-col items-center mt-20 mb-60 container px-5 mx-auto max-w-xl">
-      <h1 className="text-4xl font-semibold">Contact Us</h1>
+    <div className="px-5 md:px-0 flex flex-col items-center mt-20 mb-60 container mx-auto max-w-xl">
+      <h1 className="text-3xl md:text-4xl font-semibold">Contact Us</h1>
       <p className="text-center mt-7 mb-10 text-slate-500">
         Need to reach us? Call or message our phone number (+63) 966-902-8659 or
         fill up the form and our team will get back to you within 24 hours.
       </p>
+      <form onSubmit={onSubmit} className="space-y-4 w-full">
+        {/* Topic */}
+        <h2 className="self-start mb-2 font-semibold">Topic</h2>
+        <select
+          name="topic"
+          value={values.topic}
+          onChange={handleChange}
+          className="form-select w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40"
+        >
+          <option value="">- Select Option -</option>
+          <option value="Customer Service">Customer Service</option>
+          <option value="Business Partnership">Business Partnership / Investment</option>
+          <option value="Public Relations">Public Relations - media and press inquiries only</option>
+          <option value="Strategic Alliance">Strategic Alliance and National Partnerships</option>
+          <option value="Technical Issues">Technical Issues</option>
+        </select>
+        {errors.topic && <p className="text-red-500">{errors.topic}</p>}
 
-      {/* form */}
-      {/* topic */}
-      <h2 className="self-start mb-2 font-semibold">Topic</h2>
-      <select class="form-select w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40">
-        <option value="volvo">- Select Option -</option>
-        <option value="volvo">Customer Service</option>
-        <option value="saab">Business Partnership / Investment</option>
-        <option value="mercedes">
-          Public Relations - media and press inquiries only
-        </option>
-        <option value="audi">
-          Strategic Alliance and National Partnerships
-        </option>
-        <option value="volvo">Technical Issues</option>
-      </select>
+        {/* Email */}
+        <h2 className="self-start mb-2 font-semibold">Email Address</h2>
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email Address"
+          value={values.email}
+          onChange={handleChange}
+          className="form-input w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40"
+        />
+        {errors.email && <p className="text-red-500">{errors.email}</p>}
 
-      {/* email */}
-      <h2 className="self-start mb-2 font-semibold">Email Address</h2>
-      <input
-        type="email"
-        class="form-input w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40"
-      />
+        {/* Full Name */}
+        <h2 className="self-start mb-2 font-semibold">Full Name</h2>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Full Name"
+          value={values.name}
+          onChange={handleChange}
+          className="form-input w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40"
+        />
+        {errors.name && <p className="text-red-500">{errors.name}</p>}
 
-      {/* full name */}
-      <h2 className="self-start mb-2 font-semibold">Full Name</h2>
-      <input
-        type="text"
-        class="form-input w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40"
-      />
+        {/* ZIP/Postal Code */}
+        <h2 className="self-start mb-2 font-semibold">ZIP/Postal Code</h2>
+        <input
+          type="text"
+          name="postalCode"
+          placeholder="ZIP/Postal Code"
+          value={values.postalCode}
+          onChange={handleChange}
+          className="form-input w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40"
+        />
+        {errors.postalCode && <p className="text-red-500">{errors.postalCode}</p>}
 
-      {/* zip code */}
-      <h2 className="self-start mb-2 font-semibold">ZIP/Postal Code</h2>
-      <input
-        type="text"
-        class="form-input w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40"
-      />
+        {/* Phone */}
+        <h2 className="self-start mb-2 font-semibold">Phone Number</h2>
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          value={values.phone}
+          onChange={handleChange}
+          className="form-input w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40"
+        />
+        {errors.phone && <p className="text-red-500">{errors.phone}</p>}
 
-      {/* phone */}
-      <h2 className="self-start mb-2 font-semibold">Phone Number</h2>
-      <input
-        type="tel"
-        class="form-input w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40"
-      />
+        {/* Message */}
+        <h2 className="self-start mb-2 font-semibold">Your Message</h2>
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          value={values.message}
+          onChange={handleChange}
+          className="form-textarea w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40"
+        ></textarea>
+        {errors.message && <p className="text-red-500">{errors.message}</p>}
 
-      {/* message */}
-      <h2 className="self-start mb-2 font-semibold">Your Message</h2>
-      <textarea class="form-textarea w-full px-4 py-3 rounded-xl mb-7 focus:border-green-600 focus:ring focus:ring-green-600 focus:ring-opacity-40" />
-
-      {/* submit button */}
-      <button className="px-10 py-3 mt-6 w-full rounded-2xl font-medium bg-green-600 text-white hover:bg-green-800 transition duration-300">
-        Submit Message
-      </button>
+        {/* Submit button */}
+        <button
+          type="submit"
+          className="px-10 py-3 mt-6 w-full rounded-2xl font-medium bg-green-600 text-white hover:bg-green-800 transition duration-300"
+        >
+          Submit Message
+        </button>
+      </form>
     </div>
   );
-}
+};
+
+export default ContactUsPage;

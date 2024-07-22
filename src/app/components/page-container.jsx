@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import DownloadDialog from "./download-dialog";
 import { useState } from "react";
+import { CgClose } from "react-icons/cg";
 
 // icons
 import { FaChevronDown } from "react-icons/fa6";
@@ -13,6 +14,8 @@ import NavigationModal from "./navigation-modal";
 const PageContainer = ({ children }) => {
   const [openDownloadDialog, setOpenDownloadDialog] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   // open modal
   function modalSwitchOn() {
@@ -91,14 +94,69 @@ const PageContainer = ({ children }) => {
             >
               Contact Us
             </Link>
+
+            {/* mobile menu */}
             <div className="ml-3 lg:hidden">
-            <button class="rounded-2xl shadow-inherit navbar-burger flex items-center text-green-600 p-3">
-              <svg class="block h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Mobile menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-              </svg>
-            </button>
-          </div>
+              <button className="rounded-2xl shadow-inherit navbar-burger flex items-center text-green-600 p-3" onClick={toggleMobileMenu}>
+                <svg className="block h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <title>Mobile menu</title>
+                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                </svg>
+              </button>
+            </div>
+            <div className={`absolute top-0 left-0 w-full h-auto opacity-100 bg-white transform ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-300 lg:hidden`}>
+              
+              {isMobileMenuOpen && (
+                <div className="mobile-menu mt-5">
+                  <button onClick={toggleMobileMenu} className="flex w-full items-right pr-5">
+                    <div className="text-2xl flex ml-auto">
+                      <CgClose />
+                    </div>
+                  </button>
+                </div>
+              )}
+              <Link href="/" className="scale-75 md:scale-100 flex justify-center items-center mx-auto">
+                <div className="mr-2 md:mr-4">
+                  <Image
+                    src="/logo.png"
+                    width={50.21}
+                    height={48}
+                    alt="ScrapCycle Logo"
+                  />
+                </div>
+                <div className="mr-6">
+                  <Image
+                    src="/title-logo.png"
+                    width={197}
+                    height={30.61}
+                    alt="ScrapCycle Title Logo"
+                  />
+                </div>
+              </Link>
+
+              <ul className="p-5 mb-5 md:mb-2">
+                {/* Middle options */}
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-t border-b"><Link href="/services">What we do</Link></li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/what-we-buy">What we buy</Link></li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/about">About ScrapCycle PH</Link></li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/faqs" className="hover:text-black">FAQ</Link></li>
+              </ul>
+              {/* Call to action buttons */}
+              <div className="flex items-center justify-center pb-10 md:pb-0">
+                <button
+                  onClick={() => setOpenDownloadDialog(true)}
+                  className=" md:hidden w-32 py-2.5 mr-3 rounded-2xl font-medium bg-green-600 text-white hover:bg-green-800 transition duration-300"
+                >
+                  Sell Scrap
+                </button>
+                <Link
+                  href="/contact-us"
+                  className=" md:hidden w-32 py-2.5 rounded-2xl text-center font-medium border-green-500 text-green-600 border-solid border hover:bg-green-200/50 transition duration-300"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -165,7 +223,7 @@ const PageContainer = ({ children }) => {
             </div>
 
             {/* Contact us details */}
-            <ul className="text-sm mx-8 w-full text-slate-500">
+            <ul className="text-sm px-3 w-full text-slate-500">
               <li className="font-semibold text-slate-800">Contact us</li>
               <li className="mt-4">
                 <p>Our Email</p>

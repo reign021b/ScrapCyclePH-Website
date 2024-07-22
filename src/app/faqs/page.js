@@ -8,7 +8,7 @@ export default function FAQs() {
   const [question, setQuestion] = useState(0);
 
   return (
-    <div className="flex flex-col items-center justify-between max-w-2xl container mx-auto pt-20 pb-28 text-center">
+    <div className="flex flex-col items-center justify-between max-w-2xl container mx-auto pt-10 md:pt-20 pb-16 md:pb-28 text-center">
       {/* title and description */}
       <h1 className="text-4xl font-semibold mt-2 w-full text-center">FAQs</h1>
       <p className="pt-6 pb-12">

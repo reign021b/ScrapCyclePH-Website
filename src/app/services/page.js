@@ -6,7 +6,7 @@ export default function Services() {
     <div className="flex flex-col items-center justify-between max-w-5xl container mx-auto pt-10 lg:pt-20 pb-28">
       {/* title and description */}
       <h3 className="text-lg text-green-600">What we do</h3>
-      <h1 className="px-5 text-4xl font-semibold mt-2 mb-12">
+      <h1 className="scale-75 md:scale-90 lg:scale-100 text-center px-5 text-4xl font-semibold mt-2 mb-12">
         We buy your scraps and recycle them
       </h1>
       <p className="px-5 pt-10 border-t border-slate-200 leading-relaxed">
