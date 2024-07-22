@@ -161,7 +161,7 @@ export default function About() {
       </h2>
       <p className="max-w-3xl text-center">
         Join ScrapCycle on our mission to create a greener, more sustainable
-        future – starting with you! Together, let's take action for a cleaner
+        future - starting with you! Together, let's take action for a cleaner
         planet and a brighter tomorrow. Your support matters!
       </p>
 

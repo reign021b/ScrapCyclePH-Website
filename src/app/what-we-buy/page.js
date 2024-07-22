@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PriceItem from "./components/price-item";
 
 // supabase
@@ -118,8 +118,9 @@ export default function WhatWeBuy() {
         <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w-full mt-10">
           {items
             .filter((item) => item.type === "plastic")
-            .map((item) => (
+            .map((item, index) => (
               <PriceItem
+                key={item.id} // Assuming 'id' is a unique identifier for each item
                 imgUrl={item.image}
                 name={item.itemName}
                 price={item.priceRange}
@@ -147,6 +148,7 @@ export default function WhatWeBuy() {
             .filter((item) => item.type === "metal")
             .map((item) => (
               <PriceItem
+                key={item.id} 
                 imgUrl={item.image}
                 name={item.itemName}
                 price={item.priceRange}
@@ -174,6 +176,7 @@ export default function WhatWeBuy() {
             .filter((item) => item.type === "paper")
             .map((item) => (
               <PriceItem
+                key={item.id}
                 imgUrl={item.image}
                 name={item.itemName}
                 price={item.priceRange}
@@ -201,6 +204,7 @@ export default function WhatWeBuy() {
             .filter((item) => item.type === "e-waste")
             .map((item) => (
               <PriceItem
+                key={item.id}  
                 imgUrl={item.image}
                 name={item.itemName}
                 price={item.priceRange}
@@ -228,6 +232,7 @@ export default function WhatWeBuy() {
             .filter((item) => item.type === "battery")
             .map((item) => (
               <PriceItem
+                key={item.id}  
                 imgUrl={item.image}
                 name={item.itemName}
                 price={item.priceRange}
@@ -255,6 +260,7 @@ export default function WhatWeBuy() {
             .filter((item) => item.type === "glass")
             .map((item) => (
               <PriceItem
+                key={item.id}
                 imgUrl={item.image}
                 name={item.itemName}
                 price={item.priceRange}

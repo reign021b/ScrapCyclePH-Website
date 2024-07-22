@@ -227,7 +227,7 @@ const PageContainer = ({ children }) => {
               <li className="font-semibold text-slate-800">Contact us</li>
               <li className="mt-4">
                 <p>Our Email</p>
-                <p>scrapcycleph@gmail.com</p>
+                <p>scrapcycle781@gmail.com</p>
               </li>
               <li className="mt-4">
                 <p>Our Phone</p>
