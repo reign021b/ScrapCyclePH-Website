@@ -19,7 +19,7 @@ export default function GettingStarted() {
           <Image
             src="/articles/steps.png"
             fill
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: "contain", padding: "0 20px"}}
             alt="ScrapCycle App Phones"
           />
         </div>
