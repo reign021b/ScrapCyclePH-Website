@@ -5,7 +5,7 @@ export default function Residential() {
     <div className="px-5 flex flex-col items-center justify-between max-w-5xl container mx-auto pt-20 pb-8">
       {/* title and description */}
       <h3 className="text-lg text-slate-500">Residential</h3>
-      <h1 className="scale-75 md:scale-90 lg:scale-100 text-4xl font-semibold md:mt-2 w-full text-center md:pb-10 leading-relaxed md:px-12">
+      <h1 className="text-2xl md:text-4xl font-semibold md:mt-2 w-full text-center md:pb-10 leading-relaxed md:px-12">
         Embrace Easy Recycling: Why ScrapCycle is Your Ultimate Solution
       </h1>
 
