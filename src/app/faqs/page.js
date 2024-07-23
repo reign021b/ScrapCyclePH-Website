@@ -10,7 +10,7 @@ export default function FAQs() {
   return (
     <div className="flex flex-col items-center justify-between max-w-2xl container mx-auto pt-10 md:pt-20 pb-16 md:pb-28 text-center">
       {/* title and description */}
-      <h1 className="text-4xl font-semibold mt-2 w-full text-center">FAQs</h1>
+      <h1 className="text-2xl md:text-4xl font-semibold mt-2 w-full text-center">FAQs</h1>
       <p className="pt-6 pb-12">
         Can’t find an answer to your question? Feel free to contact us for
         personalized assistance and further clarification.

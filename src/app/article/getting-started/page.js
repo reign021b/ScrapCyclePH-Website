@@ -8,7 +8,7 @@ export default function GettingStarted() {
     <div className="flex flex-col items-center justify-between max-w-5xl container mx-auto pt-20 pb-8">
       {/* title and description */}
       <h3 className="text-lg text-slate-500">Getting Started</h3>
-      <h1 className="text-4xl font-semibold mt-2 w-full text-center pb-10 leading-relaxed px-12">
+      <h1 className="text-2xl md:text-4xl font-semibold mt-2 w-full text-center pb-10 leading-relaxed px-12">
         A Guide to Scrap Trading with ScrapCycle and Harnessing the Power of Our
         App
       </h1>
