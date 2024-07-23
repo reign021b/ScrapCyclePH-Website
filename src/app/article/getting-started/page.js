@@ -5,7 +5,7 @@ import ReactPlayer from "react-player";
 
 export default function GettingStarted() {
   return (
-    <div className="flex flex-col items-center justify-between max-w-5xl container mx-auto pt-20 pb-8">
+    <div className="px-5 flex flex-col items-center justify-center w-full mx-auto pt-10 md:pt-20 pb-8">
       {/* title and description */}
       <h3 className="text-lg text-slate-500">Getting Started</h3>
       <h1 className="text-2xl md:text-4xl font-semibold mt-2 w-full text-center pb-10 leading-relaxed px-12">
@@ -14,8 +14,8 @@ export default function GettingStarted() {
       </h1>
 
       {/* header */}
-      <div className="w-full h-[450px] bg-green-100 rounded-3xl overflow-clip flex items-center justify-center">
-        <div className="w-3/4 h-full relative">
+      <div className="w-full md:w-[600px] h-[250px] md:h-[450px] bg-green-100 rounded-3xl overflow-clip flex items-center justify-center">
+        <div className="w-full h-full relative flex justify-center items-center mx-auto">
           <Image
             src="/articles/steps.png"
             fill
@@ -26,7 +26,7 @@ export default function GettingStarted() {
       </div>
 
       {/* article */}
-      <div className="p-8 bg-white rounded-lg mx-36 py-12">
+      <div className="md:p-8 bg-white rounded-lg mx-auto md:mx-36 py-12 w-full">
         <p>
           With ScrapCycle, simplicity meets practicality. We understand that
           people seek a straightforward, hassle-free way to recycle their waste.
@@ -36,14 +36,14 @@ export default function GettingStarted() {
           sustainable and eco-friendly waste disposal.
         </p>
 
-        <div className="w-[450px] h-[450px] mx-auto my-12">
-          <div className="relative w-full h-full rounded-3xl border-4 border-green-400 overflow-hidden flex items-center justify-center">
-            <ReactPlayer
-              url="https://youtu.be/cAqoxpjYrWY"
-              style={{ objectFit: "cover" }}
-              width="100%"
-              height="100%"
-            />
+        <div className="w-[350px] md:w-[450px] h-[350px] md:h-[450px] my-12 mx-auto">
+          <div className="relative w-full h-full rounded-3xl border-4 border-green-400 overflow-hidden flex items-center justify-center mx-auto">
+              <ReactPlayer
+                url="https://youtu.be/cAqoxpjYrWY"
+                style={{ objectFit: "cover" }}
+                width="100%"
+                height="100%"
+              />
           </div>
         </div>
 
@@ -59,7 +59,7 @@ export default function GettingStarted() {
           finalize your booking.
         </p>
 
-        <div className="w-full h-[600px] relative mb-12">
+        <div className="w-full h-[400px] md:h-[600px] relative mb-12">
           <Image
             src="/articles/step-1.png"
             fill
@@ -80,7 +80,7 @@ export default function GettingStarted() {
           recyclables.
         </p>
 
-        <div className="w-full h-[600px] relative mb-12">
+        <div className="w-[350px] md:w-[600px] h-[350px] md:h-[600px] relative mb-12 mx-auto">
           <Image
             src="/articles/step-2.png"
             fill
@@ -100,7 +100,7 @@ export default function GettingStarted() {
           receive your payment swiftly with a paper receipt.
         </p>
 
-        <div className="w-3/4 h-96 relative mb-12 rounded-3xl overflow-clip mt-8 mx-auto">
+        <div className="w-[350px] md:w-[600px] h-[350px] md:h-[400px] relative mb-12 rounded-3xl overflow-clip mt-8 mx-auto">
           <Image
             src="/articles/step-3.png"
             fill
