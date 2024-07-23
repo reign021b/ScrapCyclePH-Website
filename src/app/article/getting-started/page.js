@@ -104,7 +104,7 @@ export default function GettingStarted() {
           <Image
             src="/articles/step-3.png"
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "contain" }}
             alt="ScrapCycle App Phones"
           />
         </div>
