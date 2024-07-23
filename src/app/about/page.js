@@ -14,7 +14,7 @@ export default function About() {
   return (
     <div className="px-5 md:px=0 flex flex-col items-center justify-between w-full container mx-auto pt-5 md:pt-20">
       <h3 className="text-lg text-slate-500">About Us</h3>
-      <h1 className="text-xl md:text-3xl font-semibold mt-2 w-full text-center leading-relaxed">
+      <h1 className="text-2xl md:text-3xl font-semibold mt-2 w-full text-center leading-relaxed">
         At ScrapCycle, we're on a mission to revolutionize waste management and
         recycling in the Philippines. Our aim is to make recycling{" "}
         <span className="text-green-600">accessible</span>
