@@ -26,7 +26,7 @@ export default function GettingStarted() {
       </div>
 
       {/* article */}
-      <div className="md:p-8 bg-white rounded-lg mx-auto lg:w-3/5 md:mx-36 py-12 w-full">
+      <div className="md:p-8 bg-white rounded-lg mx-auto xl:w-3/5 md:mx-36 py-12 w-full">
         <p>
           With ScrapCycle, simplicity meets practicality. We understand that
           people seek a straightforward, hassle-free way to recycle their waste.
