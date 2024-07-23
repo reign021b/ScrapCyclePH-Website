@@ -56,7 +56,7 @@ export default function WhatWeBuy() {
     <div className="flex flex-col items-center justify-between max-w-5xl container mx-auto pt-10 lg:pt-20 pb-28">
       {/* title and description */}
       <h3 className="text-lg text-green-600">What we buy</h3>
-      <h1 className="text-2xl md:text-4xl px-5  font-semibold mt-2 w-full text-center pb-12 border-b border-slate-200">
+      <h1 className="text-2xl md:text-4xl px-5 font-semibold mt-2 w-full text-center pb-12 border-b border-slate-200">
         We accept a wide catalog of materials and items
       </h1>
 
