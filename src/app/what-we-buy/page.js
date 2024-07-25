@@ -106,9 +106,7 @@ export default function WhatWeBuy() {
         <div className="flex">
           <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">Plastics</h2>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+          Plastic is a man-made material that can be shaped into many different forms. It's created by combining simple chemicals into long chains. This makes plastic flexible and strong. While plastics are durable and inexpensive, their disposal and environmental impact are significant concerns. Recycling plastics helps reduce waste and conserve resources.
             <br />
             <br />
             Note: Pricing for bulk scraps is higher (contact us for more info).
@@ -134,9 +132,7 @@ export default function WhatWeBuy() {
         <div className="flex">
           <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">Metals</h2>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+          Metals are materials that are usually hard, shiny, and can conduct heat and electricity. Recycling metals helps save resources and reduces waste. Instead of throwing away old metal items, recycling them allows us to reuse the metal to make new products. 
             <br />
             <br />
             Note: Pricing for bulk scraps is higher (contact us for more info).
@@ -162,9 +158,7 @@ export default function WhatWeBuy() {
         <div className="flex">
           <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">Paper</h2>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+          Paper is a material made from plant fibers, usually from wood but sometimes from other plants like cotton. It’s used for things like books, newspapers, and packaging. During recycling, paper is broken down, cleaned, and reprocessed into new paper products, helping to reduce the need for virgin materials and decrease environmental impact.
             <br />
             <br />
             Note: Pricing for bulk scraps is higher (contact us for more info).
@@ -190,9 +184,7 @@ export default function WhatWeBuy() {
         <div className="flex">
           <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">E-Waste</h2>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+          E-waste, or electronic waste, refers to discarded electrical or electronic devices. E-waste often contains hazardous materials like lead, mercury, and cadmium, which can pose environmental and health risks if not properly managed. Recycling e-waste helps recover valuable materials and reduces the negative impact on the environment.
             <br />
             <br />
             Note: Pricing for bulk scraps is higher (contact us for more info).
@@ -218,9 +210,7 @@ export default function WhatWeBuy() {
         <div className="flex">
           <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">Batteries</h2>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+          Car and Motorcycle batteries are specialized batteries designed to power vehicles. Both types of batteries contain hazardous materials like lead and sulfuric acid, making proper disposal and recycling crucial for environmental safety and resource recovery.
             <br />
             <br />
             Note: Pricing for bulk scraps is higher (contact us for more info).
@@ -246,9 +236,7 @@ export default function WhatWeBuy() {
         <div className="flex">
           <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">Glass</h2>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+          Glass is a hard and breakable material often used for things like windows, bottles, and jars. It’s made by melting sand and then quickly cooling it to create a solid. Glass is recyclable and can be processed repeatedly without losing quality, making it an environmentally friendly option when properly managed. Recycling glass helps conserve resources and reduces the need for raw materials.
             <br />
             <br />
             Note: Pricing for bulk scraps is higher (contact us for more info).
