@@ -10,9 +10,9 @@ export default function ClutterIntoTrash() {
       </h1>
 
       {/* header */}
-      <div className="relative w-full h-[450px] rounded-3xl overflow-clip flex items-center justify-center">
+      <div className="relative w-full h-[200px] md:h-[350px] lg:h-[500px] rounded-3xl overflow-clip flex items-center justify-center">
         <Image
-          src="/articles/environment.png"
+          src="/articles/clutter-to-trash.png"
           fill
           style={{ objectFit: "cover" }}
           alt="ScrapCycle App Phones"
