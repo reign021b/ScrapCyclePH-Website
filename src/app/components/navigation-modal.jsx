@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // icons
-import { FaAddressCard } from "react-icons/fa";
+import { FaNewspaper, FaAddressCard } from "react-icons/fa";
 import { MdQuestionAnswer } from "react-icons/md";
 
 const NavigationModal = () => {
@@ -34,6 +34,24 @@ const NavigationModal = () => {
       </Link>
 
       {/* modal menu 2 */}
+      <Link href="/article/clutter-into-trash" className="flex my-5 group">
+        {/* icon */}
+        <div className="bg-green-100 rounded-lg w-11 h-11 flex items-center justify-center shrink-0 text-green-600 text-2xl">
+          <FaNewspaper />
+        </div>
+
+        {/* text */}
+        <div className="flex flex-col flex-1 text-left px-4">
+          <h4 className="font-semibold group-hover:text-green-600 transition duration-300">
+            Articles
+          </h4>
+          <p className="text-sm text-slate-500 group-hover:text-green-600 transition duration-300">
+            Posts
+          </p>
+        </div>
+      </Link>
+
+      {/* modal menu 3 */}
       <Link href="/careers" className="flex mb-5 group">
         {/* icon */}
         <div className="bg-green-100 rounded-lg w-11 h-11 flex items-center justify-center shrink-0 text-green-600 text-2xl">
@@ -51,7 +69,7 @@ const NavigationModal = () => {
         </div>
       </Link>
 
-      {/* modal menu 3 */}
+      {/* modal menu 4 */}
       <Link href="/faqs" className="flex pt-5 group border-t border-slate-200">
         {/* icon */}
         <div className="bg-green-100 rounded-lg w-11 h-11 flex items-center justify-center shrink-0 text-green-600 text-2xl">

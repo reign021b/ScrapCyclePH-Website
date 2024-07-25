@@ -139,6 +139,7 @@ const PageContainer = ({ children }) => {
                 <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-t border-b"><Link href="/services">What we do</Link></li>
                 <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/what-we-buy">What we buy</Link></li>
                 <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/about">About ScrapCycle PH</Link></li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/article/clutter-into-trash">Articles</Link></li>
                 <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/faqs" className="hover:text-black">FAQ</Link></li>
               </ul>
               {/* Call to action buttons */}
