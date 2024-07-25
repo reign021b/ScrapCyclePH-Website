@@ -59,7 +59,7 @@ export default function GettingStarted() {
           finalize your booking.
         </p>
 
-        <div className="w-full h-[400px] md:h-[600px] relative mb-12">
+        <div className="w-full h-[400px] md:h-[600px] relative my-12">
           <Image
             src="/articles/step-1.png"
             fill
