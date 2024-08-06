@@ -2,10 +2,15 @@
 
 import { createClient } from "@supabase/supabase-js";
 
+// Ensure the environment variables are defined
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  throw new Error("Missing Supabase environment variables");
+}
+
 // Create a single supabase client for interacting with your database
-const supabase = createClient(
-  "https://alfljqjdwlomzepvepun.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFsZmxqcWpkd2xvbXplcHZlcHVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Njc4MzA3MTEsImV4cCI6MTk4MzQwNjcxMX0.PQsUIVHXlt0P2lQ7ZGvYyHQioWZ-lz9uHKLdwVX-YYY"
-);
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 export default supabase;
