@@ -1,8 +1,9 @@
+// src/app/what-we-buy/page.js
+
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import PriceItem from "./components/price-item";
-import supabase from "/utils/supabase/client";
 
 export default function WhatWeBuy() {
   const [items, setItems] = useState([]);
@@ -19,8 +20,8 @@ export default function WhatWeBuy() {
   const glassRef = useRef(null);
 
   async function getItems() {
-    const { data } = await supabase.from("prices").select();
-    console.log(data);
+    const res = await fetch("/api/getItems");
+    const data = await res.json();
     setItems(data);
   }
 
@@ -111,7 +112,7 @@ export default function WhatWeBuy() {
         <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w-full mt-10">
           {items
             .filter((item) => item.type === "plastic")
-            .map((item) => (
+            .map((item, index) => (
               <PriceItem
                 key={item.id}
                 imgUrl={item.image}
@@ -161,16 +162,15 @@ export default function WhatWeBuy() {
             Paper is a material made from plant fibers, usually from wood but
             sometimes from other plants like cotton. It’s used for things like
             books, newspapers, and packaging. During recycling, paper is broken
-            down, cleaned, and reprocessed into new paper products, helping to
-            reduce the need for virgin materials and decrease environmental
-            impact.
+            down into fibers and made into new paper products. This helps save
+            trees and reduce waste.
             <br />
             <br />
             Note: Pricing for bulk scraps is higher (contact us for more info).
           </p>
         </div>
         {/* grid */}
-        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w full mt-10">
+        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w-full mt-10">
           {items
             .filter((item) => item.type === "paper")
             .map((item) => (
@@ -188,22 +188,21 @@ export default function WhatWeBuy() {
       <div ref={ewasteRef} className="scale-90 md:scale-100 px-5 md:pt-28">
         <div className="flex">
           <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">
-            E-Waste
+            E-waste
           </h2>
           <p>
-            E-waste, or electronic waste, refers to discarded electrical or
-            electronic devices. E-waste often contains hazardous materials like
-            lead, mercury, and cadmium, which can pose environmental and health
-            risks if not properly managed. Recycling e-waste helps recover
-            valuable materials and reduces the negative impact on the
-            environment.
+            E-waste refers to old or discarded electronic devices like phones,
+            computers, and TVs. These items contain valuable materials that can
+            be reused. Recycling e-waste helps recover these materials, reducing
+            the need to mine new resources and preventing harmful substances
+            from entering the environment.
             <br />
             <br />
             Note: Pricing for bulk scraps is higher (contact us for more info).
           </p>
         </div>
         {/* grid */}
-        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w full mt-10">
+        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w-full mt-10">
           {items
             .filter((item) => item.type === "e-waste")
             .map((item) => (
@@ -221,20 +220,21 @@ export default function WhatWeBuy() {
       <div ref={batteryRef} className="scale-90 md:scale-100 px-5 md:pt-28">
         <div className="flex">
           <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">
-            Batteries
+            Battery
           </h2>
           <p>
-            Car and Motorcycle batteries are specialized batteries designed to
-            power vehicles. Both types of batteries contain hazardous materials
-            like lead and sulfuric acid, making proper disposal and recycling
-            crucial for environmental safety and resource recovery.
+            Batteries store and supply electrical energy for various devices.
+            However, they contain harmful chemicals that can pollute the
+            environment if not disposed of properly. Recycling batteries allows
+            the safe recovery of metals and prevents hazardous substances from
+            causing environmental damage.
             <br />
             <br />
             Note: Pricing for bulk scraps is higher (contact us for more info).
           </p>
         </div>
         {/* grid */}
-        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w full mt-10">
+        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w-full mt-10">
           {items
             .filter((item) => item.type === "battery")
             .map((item) => (
@@ -249,24 +249,22 @@ export default function WhatWeBuy() {
       </div>
 
       {/* glass */}
-      <div ref={glassRef} className="scale-90 md:scale-100 px-5 md:pt-28 mb-20">
+      <div ref={glassRef} className="scale-90 md:scale-100 px-5 md:pt-28">
         <div className="flex">
           <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">Glass</h2>
           <p>
-            Glass is a hard and breakable material often used for things like
-            windows, bottles, and jars. It’s made by melting sand and then
-            quickly cooling it to create a solid. Glass is recyclable and can be
-            processed repeatedly without losing quality, making it an
-            environmentally friendly option when properly managed. Recycling
-            glass helps conserve resources and reduces the need for raw
-            materials.
+            Glass is made from sand and other minerals and is commonly used for
+            containers, windows, and more. Recycling glass saves energy and
+            resources since it can be melted down and reformed multiple times
+            without losing quality. Properly recycled glass reduces the need for
+            raw materials and minimizes environmental impact.
             <br />
             <br />
             Note: Pricing for bulk scraps is higher (contact us for more info).
           </p>
         </div>
         {/* grid */}
-        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w full mt-10">
+        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w-full mt-10">
           {items
             .filter((item) => item.type === "glass")
             .map((item) => (
