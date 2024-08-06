@@ -93,7 +93,7 @@ const DownloadDialog = ({ setCloseDownloadDialog }) => {
                   <FaApple />
                 </div>
                 <div className="text-left ml-3">
-                  <p className="text-xs">Available soom</p>
+                  <p className="text-xs">Available soon</p>
                   <p className="font-semibold">App Store</p>
                 </div>
               </button>
