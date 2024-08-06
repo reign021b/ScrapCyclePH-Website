@@ -27,21 +27,15 @@ export default function WhatWeBuy() {
 
   function scrollToRef(materialType) {
     if (materialType === 1) {
-    if (materialType === 1) {
       plasticRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (materialType === 2) {
     } else if (materialType === 2) {
       metalRef.current?.scrollIntoView({ behavior: "smooth" });
     } else if (materialType === 3) {
-    } else if (materialType === 3) {
       paperRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (materialType === 4) {
     } else if (materialType === 4) {
       ewasteRef.current?.scrollIntoView({ behavior: "smooth" });
     } else if (materialType === 5) {
-    } else if (materialType === 5) {
       batteryRef.current?.scrollIntoView({ behavior: "smooth" });
-    } else if (materialType === 6) {
     } else if (materialType === 6) {
       glassRef.current?.scrollIntoView({ behavior: "smooth" });
     }
@@ -102,16 +96,7 @@ export default function WhatWeBuy() {
           <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">
             Plastics
           </h2>
-          <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">
-            Plastics
-          </h2>
           <p>
-            Plastic is a man-made material that can be shaped into many
-            different forms. It's created by combining simple chemicals into
-            long chains. This makes plastic flexible and strong. While plastics
-            are durable and inexpensive, their disposal and environmental impact
-            are significant concerns. Recycling plastics helps reduce waste and
-            conserve resources.
             Plastic is a man-made material that can be shaped into many
             different forms. It's created by combining simple chemicals into
             long chains. This makes plastic flexible and strong. While plastics
@@ -127,9 +112,8 @@ export default function WhatWeBuy() {
         <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w-full mt-10">
           {items
             .filter((item) => item.type === "plastic")
-            .map((item) => (
+            .map((item, index) => (
               <PriceItem
-                key={item.id}
                 key={item.id}
                 imgUrl={item.image}
                 name={item.itemName}
@@ -145,14 +129,7 @@ export default function WhatWeBuy() {
           <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">
             Metals
           </h2>
-          <h2 className="text-2xl md:text-4xl font-medium mr-10 w-52">
-            Metals
-          </h2>
           <p>
-            Metals are materials that are usually hard, shiny, and can conduct
-            heat and electricity. Recycling metals helps save resources and
-            reduces waste. Instead of throwing away old metal items, recycling
-            them allows us to reuse the metal to make new products.
             Metals are materials that are usually hard, shiny, and can conduct
             heat and electricity. Recycling metals helps save resources and
             reduces waste. Instead of throwing away old metal items, recycling
@@ -168,7 +145,6 @@ export default function WhatWeBuy() {
             .filter((item) => item.type === "metal")
             .map((item) => (
               <PriceItem
-                key={item.id}
                 key={item.id}
                 imgUrl={item.image}
                 name={item.itemName}
@@ -194,7 +170,7 @@ export default function WhatWeBuy() {
           </p>
         </div>
         {/* grid */}
-        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w full mt-10">
+        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w-full mt-10">
           {items
             .filter((item) => item.type === "paper")
             .map((item) => (
@@ -226,12 +202,11 @@ export default function WhatWeBuy() {
           </p>
         </div>
         {/* grid */}
-        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w full mt-10">
+        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w-full mt-10">
           {items
             .filter((item) => item.type === "e-waste")
             .map((item) => (
               <PriceItem
-                key={item.id}
                 key={item.id}
                 imgUrl={item.image}
                 name={item.itemName}
@@ -259,12 +234,11 @@ export default function WhatWeBuy() {
           </p>
         </div>
         {/* grid */}
-        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w full mt-10">
+        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w-full mt-10">
           {items
             .filter((item) => item.type === "battery")
             .map((item) => (
               <PriceItem
-                key={item.id}
                 key={item.id}
                 imgUrl={item.image}
                 name={item.itemName}
@@ -290,7 +264,7 @@ export default function WhatWeBuy() {
           </p>
         </div>
         {/* grid */}
-        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w full mt-10">
+        <div className="grid grid-cols-6 gap-x-7 gap-y-10 row-auto w-full mt-10">
           {items
             .filter((item) => item.type === "glass")
             .map((item) => (
