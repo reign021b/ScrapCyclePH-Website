@@ -59,7 +59,11 @@ export default function Article() {
       </h1>
       {/* grid */}
       {currentArticles.map((article, index) => (
-        <a href={article.href} key={index}>
+        <a
+          href={article.href}
+          key={index}
+          className="hover:scale-105 transform transition-transform duration-300 ease-in-out"
+        >
           <div className="rounded-2xl grid md:flex grid-cols-2 md:grid-cols-3 px-5 pb-5 lg:pb-10">
             <div className="col-span-2 md:cols-span-1 lg:min-w-[500px] md:min-w-[300px] max-w-[400px]">
               <Image
