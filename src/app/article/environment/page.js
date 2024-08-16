@@ -20,7 +20,7 @@ export default function Environment() {
       </div>
 
       {/* article */}
-      <div className="lg:p-8 bg-white rounded-lg lg:mx-36 pt-12">
+      <div className="lg:p-8 bg-white rounded-lg lg:mx-26 pt-12">
         <p className="mb-12">
           In today's fast-paced world, the issue of waste management has become
           increasingly critical. With landfills overflowing and environmental
