@@ -34,7 +34,7 @@ const NavigationModal = () => {
       </Link>
 
       {/* modal menu 2 */}
-      <Link href="/article/clutter-into-trash" className="flex my-5 group">
+      <Link href="/article" className="flex my-5 group">
         {/* icon */}
         <div className="bg-green-100 rounded-lg w-11 h-11 flex items-center justify-center shrink-0 text-green-600 text-2xl">
           <FaNewspaper />
