@@ -97,25 +97,41 @@ const PageContainer = ({ children }) => {
 
             {/* mobile menu */}
             <div className="ml-3 lg:hidden">
-              <button className="rounded-2xl shadow-inherit navbar-burger flex items-center text-green-600 p-3" onClick={toggleMobileMenu}>
-                <svg className="block h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <button
+                className="rounded-2xl shadow-inherit navbar-burger flex items-center text-green-600 p-3"
+                onClick={toggleMobileMenu}
+              >
+                <svg
+                  className="block h-6 w-6 fill-current"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <title>Mobile menu</title>
                   <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
                 </svg>
               </button>
             </div>
-            <div className={`absolute top-0 left-0 w-full h-auto opacity-100 bg-white transform ${isMobileMenuOpen ? 'translate-y-0' : '-translate-y-full'} transition-transform duration-300 lg:hidden`}>
-              
+            <div
+              className={`absolute top-0 left-0 w-full h-auto opacity-100 bg-white transform ${
+                isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+              } transition-transform duration-300 lg:hidden`}
+            >
               {isMobileMenuOpen && (
                 <div className="mobile-menu mt-5">
-                  <button onClick={toggleMobileMenu} className="flex w-full items-right pr-5">
+                  <button
+                    onClick={toggleMobileMenu}
+                    className="flex w-full items-right pr-5"
+                  >
                     <div className="text-2xl flex ml-auto">
                       <CgClose />
                     </div>
                   </button>
                 </div>
               )}
-              <Link href="/" className="scale-75 md:scale-100 flex justify-center items-center mx-auto">
+              <Link
+                href="/"
+                className="scale-75 md:scale-100 flex justify-center items-center mx-auto"
+              >
                 <div className="mr-2 md:mr-4">
                   <Image
                     src="/logo.png"
@@ -136,11 +152,23 @@ const PageContainer = ({ children }) => {
 
               <ul className="p-5 mb-5 md:mb-2">
                 {/* Middle options */}
-                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-t border-b"><Link href="/services">What we do</Link></li>
-                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/what-we-buy">What we buy</Link></li>
-                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/about">About ScrapCycle PH</Link></li>
-                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/article/clutter-into-trash">Articles</Link></li>
-                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b"><Link href="/faqs" className="hover:text-black">FAQ</Link></li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-t border-b">
+                  <Link href="/services">What we do</Link>
+                </li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b">
+                  <Link href="/what-we-buy">What we buy</Link>
+                </li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b">
+                  <Link href="/about">About ScrapCycle PH</Link>
+                </li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b">
+                  <Link href="/article">Articles</Link>
+                </li>
+                <li className="block p-2 text-center font-semibold hover:bg-green-50 hover:text-green-600 rounded border-b">
+                  <Link href="/faqs" className="hover:text-black">
+                    FAQ
+                  </Link>
+                </li>
               </ul>
               {/* Call to action buttons */}
               <div className="flex items-center justify-center pb-10 md:pb-0">
@@ -235,8 +263,7 @@ const PageContainer = ({ children }) => {
                 <p>(+63)966 902 8659</p>
               </li>
               <li className="mt-4">
-                Hiraya Bldg. Caraga State University, Brgy. Ampayon, Butuan
-                City
+                Hiraya Bldg. Caraga State University, Brgy. Ampayon, Butuan City
               </li>
             </ul>
 
