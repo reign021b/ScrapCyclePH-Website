@@ -59,10 +59,10 @@ const PageContainer = ({ children }) => {
 
           {/* middle options */}
           <ul className="hidden lg:flex items-center">
-            <li className="hover:text-slate-400 hover:cursor-pointer transition duration-300">
+            <li className="hover:text-green-600 hover:cursor-pointer transition duration-300">
               <Link href="/services">What we do</Link>
             </li>
-            <li className="hover:text-slate-400 hover:cursor-pointer transition duration-300 mx-12">
+            <li className="hover:text-green-600 hover:cursor-pointer transition duration-300 mx-12">
               <Link href="/what-we-buy">What we buy</Link>
             </li>
             <li
@@ -73,10 +73,10 @@ const PageContainer = ({ children }) => {
               {/* modal */}
               {openModal && <NavigationModal />}
 
-              <p className="mr-4 group-hover/more:text-slate-400 transition duration-300 flex items-center">
+              <p className="mr-4 group-hover/more:text-green-600 transition duration-300 flex items-center">
                 More
               </p>
-              <FaChevronDown className="text-slate-500 group-hover/more:text-slate-400 transition duration-300 flex items-center" />
+              <FaChevronDown className="text-slate-500 group-hover/more:text-green-500 transition duration-300 flex items-center" />
             </li>
           </ul>
 
