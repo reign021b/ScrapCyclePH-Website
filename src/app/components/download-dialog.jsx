@@ -39,7 +39,7 @@ const DownloadDialog = ({ setCloseDownloadDialog }) => {
           </button>
 
           {/* content */}
-          <div className="w-full pt-6 md:pt-0 px-5 my-auto">
+          <div className="w-full pt-2 md:pt-0 px-5 my-auto">
             {/* title logo */}
             <div className="flex justify-center items-center">
               <div className="mt-[3px] mr-4">
