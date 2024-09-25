@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 
 // icons
 import { MdOutlineTimer } from "react-icons/md";
@@ -8,11 +9,21 @@ import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import { IoEarth } from "react-icons/io5";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import ReviewSlides from "../components/review-slides";
-import ReactPlayer from "react-player";
+import { useEffect, useState } from "react";
+
+// Dynamically import ReactPlayer to avoid SSR issues
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 export default function About() {
+  // State to track if the component is mounted
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <div className="px-5 md:px=0 flex flex-col items-center justify-between w-full container mx-auto pt-5 md:pt-20">
+    <div className="px-5 md:px-5 flex flex-col items-center justify-between w-full container mx-auto pt-5 md:pt-20">
       <h3 className="text-lg text-slate-500">About Us</h3>
       <h1 className="text-2xl md:text-3xl font-semibold mt-2 w-full text-center leading-relaxed">
         At ScrapCycle, we're on a mission to revolutionize waste management and
@@ -24,7 +35,7 @@ export default function About() {
         <span className="text-green-600">rewarding</span> for everyone.
       </h1>
 
-      {/* gallery */}
+      {/* Gallery */}
       <div className="flex justify-around w-full items-center pt-16 pb-24">
         <div className="hidden lg:block w-56 h-72">
           <div className="relative w-full h-full rounded-3xl overflow-clip flex items-center justify-center">
@@ -37,15 +48,17 @@ export default function About() {
           </div>
         </div>
 
-        {/* video */}
+        {/* Video */}
         <div className="w-[500px] h-[500px]">
           <div className="relative w-full h-full rounded-3xl border-4 border-green-400 overflow-hidden flex items-center justify-center">
-            <ReactPlayer
-              url="https://youtu.be/cAqoxpjYrWY"
-              style={{ objectFit: "cover" }}
-              width="100%"
-              height="100%"
-            />
+            {isMounted && (
+              <ReactPlayer
+                url="https://youtu.be/cAqoxpjYrWY"
+                style={{ objectFit: "cover" }}
+                width="100%"
+                height="100%"
+              />
+            )}
           </div>
         </div>
 
@@ -61,7 +74,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* statements */}
+      {/* Statements */}
       <div className="grid grid-cols-2 gap-10 md:gap-20">
         <div className="col-span-2 md:col-span-1">
           <h2 className="text-2xl font-semibold">Problems we aim to solve</h2>
@@ -85,14 +98,12 @@ export default function About() {
         </div>
       </div>
 
-      {/* competitive advantages */}
-      {/* heading text */}
+      {/* Competitive Advantages */}
       <h2 className="text-4xl font-semibold mt-40">Why choose us?</h2>
       <p className="text-slate-500 max-w-lg text-center mt-5 mb-14">
         Choose ScrapCycle and experience fair pricing, unmatched convenience,
         and a tangible positive impact on the environment.
       </p>
-      {/* grid */}
       <div className="my-8 grid grid-cols-2 gap-x-12 gap-y-10 md:gap-y-20">
         <div className="relative bg-neutral-100 px-6 pt-14 pb-8 rounded-2xl col-span-2 md:col-span-1">
           <div className="absolute bottom-3/4 mb-3 bg-white rounded-full w-14 md:w-20 h-14 md:h-20 border border-green-600 text-green-600 flex items-center justify-center text-4xl">
@@ -146,13 +157,13 @@ export default function About() {
         </div>
       </div>
 
-      {/* last part */}
+      {/* Last Part */}
       <div className="relative w-16 md:w-24 h-16 md:h-24 mt-20 md:mt-36 rounded-3xl overflow-clip flex items-center justify-center">
         <Image
           src="/logo.png"
           fill
           style={{ objectFit: "cover" }}
-          alt="ScrapCycle App Phones"
+          alt="ScrapCycle Logo"
         />
       </div>
 
@@ -166,7 +177,7 @@ export default function About() {
       </p>
 
       <div className="mb-12 mt-20 relative w-screen overflow-auto cursor-grab">
-        {/* review container */}
+        {/* Review container */}
         <ReviewSlides />
       </div>
     </div>

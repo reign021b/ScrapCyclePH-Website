@@ -88,15 +88,18 @@ const DownloadDialog = ({ setCloseDownloadDialog }) => {
                   <p className="font-semibold">Google Play</p>
                 </div>
               </a>
-              <button className="mx-8 lg:mx-0 border border-slate-300 rounded-xl p-3 flex col-span-2 lg:col-span-1 text-slate-400 cursor-not-allowed">
+              <a
+                href="https://onelink.to/8zcwua"
+                className="mx-8 lg:mx-0 border border-slate-600 rounded-xl p-3 flex col-span-2 lg:col-span-1 hover:bg-green-50 hover:border-green-600 transition duration-200 ease-in"
+              >
                 <div className="text-4xl">
                   <FaApple />
                 </div>
                 <div className="text-left ml-3">
-                  <p className="text-xs">Available soon</p>
+                  <p className="text-xs">Download on</p>
                   <p className="font-semibold">App Store</p>
                 </div>
-              </button>
+              </a>
             </div>
           </div>
         </div>
